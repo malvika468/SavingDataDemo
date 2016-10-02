@@ -19,7 +19,8 @@ import java.io.FileOutputStream;
 
 public class MainActivity extends AppCompatActivity {
     String filename = "myfile";
-    String file1 = "external";
+    String file1 = "external.txt";
+
     File file;
     FeedReaderDbHelper mDbHelper;
     SQLiteDatabase db;
@@ -238,8 +239,9 @@ public class MainActivity extends AppCompatActivity {
         String str1=ed.getText().toString();
 
         if(isExternalStorageWritable()) {
-            file = new File(Environment.getExternalStoragePublicDirectory(
-                    Environment.DIRECTORY_DOCUMENTS),file1);
+            //file = new File(Environment.getExternalStoragePublicDirectory(
+                    //Environment.DIRECTORY_DOCUMENTS),file1);
+            File file=Environment.getExternalStorageDirectory();
             try{
                 outputStream = openFileOutput(file1, Context.MODE_PRIVATE);
                 outputStream.write(str1.getBytes());
@@ -252,6 +254,32 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
+
+
+    public void extPublic(View v)
+    {
+        FileOutputStream outputStream;
+        EditText ed=(EditText)findViewById(R.id.editText);
+        String str1=ed.getText().toString();
+
+        if(isExternalStorageWritable()) {
+            file = new File(Environment.getExternalStoragePublicDirectory(
+            Environment.DIRECTORY_DOCUMENTS),file1);
+           // File file=Environment.getExternalStoragePublicDirectory();
+            try{
+                outputStream = openFileOutput(file1, Context.MODE_PRIVATE);
+                outputStream.write(str1.getBytes());
+                outputStream.close();
+
+            }
+            catch(Exception e)
+            {
+                e.printStackTrace();
+            }
+        }
+    }
+
+
     public void externalRead(View v)
     {
         try{

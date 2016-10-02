@@ -29,6 +29,7 @@
         android:text="delete"
         android:id="@+id/button2"
         android:onClick="delete"
+        android:backgroundTint="@android:color/holo_blue_light"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
@@ -39,6 +40,7 @@
         android:text="update"
         android:id="@+id/button3"
         android:onClick="update"
+        android:backgroundTint="@android:color/holo_blue_light"
         android:layout_alignParentBottom="true"
         />
 
@@ -59,6 +61,7 @@
         android:text="show"
         android:id="@+id/button4"
         android:onClick="show"
+        android:backgroundTint="@android:color/holo_blue_light"
         android:layout_below="@+id/editText2"
         android:layout_alignLeft="@+id/button"
         android:layout_alignStart="@+id/button" />
@@ -70,6 +73,7 @@
         android:onClick="save"
         android:id="@+id/button"
         android:layout_below="@+id/button4"
+        android:backgroundTint="@android:color/holo_blue_light"
         android:layout_centerHorizontal="true" />
 
     <Button
@@ -78,6 +82,7 @@
         android:text="Shared"
         android:id="@+id/button5"
         android:onClick="sharedSave"
+        android:backgroundTint="@android:color/holo_blue_light"
         android:layout_alignTop="@+id/button8"
         android:layout_toLeftOf="@+id/button8"
         android:layout_toStartOf="@+id/button8" />
@@ -88,6 +93,7 @@
         android:text="IntWrite"
         android:id="@+id/button7"
         android:onClick="internalWrite"
+        android:backgroundTint="@android:color/holo_blue_light"
         android:layout_above="@+id/button5"
         android:layout_toLeftOf="@+id/button"
         android:layout_toStartOf="@+id/button" />
@@ -98,6 +104,7 @@
         android:text="ExtWrite"
         android:id="@+id/button8"
         android:onClick="externalWrite"
+        android:backgroundTint="@android:color/holo_blue_light"
         android:layout_below="@+id/button"
         android:layout_alignRight="@+id/button9"
         android:layout_alignEnd="@+id/button9" />
@@ -108,6 +115,7 @@
         android:text="IntRead"
         android:onClick="internalRead"
         android:id="@+id/button6"
+        android:backgroundTint="@android:color/holo_blue_light"
         android:layout_alignTop="@+id/button5"
         android:layout_toLeftOf="@+id/button5"
         android:layout_toStartOf="@+id/button5" />
@@ -118,6 +126,7 @@
         android:text="ExtRead"
         android:onClick="externalRead"
         android:id="@+id/button9"
+        android:backgroundTint="@android:color/holo_blue_light"
         android:layout_alignTop="@+id/button"
         android:layout_toRightOf="@+id/button"
         android:layout_toEndOf="@+id/button" />
@@ -129,6 +138,16 @@
         android:id="@+id/textView2"
         android:textColor="@android:color/holo_blue_light"
         android:layout_above="@+id/button2"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ExtPublicWrite"
+        android:onClick="extPublic"
+        android:backgroundTint="@android:color/holo_blue_light"
+        android:id="@+id/button10"
+        android:layout_below="@+id/button5"
         android:layout_centerHorizontal="true" />
 
 
