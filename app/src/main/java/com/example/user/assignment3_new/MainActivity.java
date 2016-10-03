@@ -82,7 +82,9 @@ public class MainActivity extends AppCompatActivity {
         ed2 = (EditText) findViewById(R.id.editText2);
         values1.put(FeedReaderContract.FeedEntry.COLUMN_NAME_Roll, ed2.getText().toString());
         values1.put(FeedReaderContract.FeedEntry.COLUMN_NAME_Name, ed1.getText().toString());
-        long newRowId = db.insert(FeedReaderContract.FeedEntry.TABLE_NAME, null, values1);
+       // long newRowId = db.insert(FeedReaderContract.FeedEntry.TABLE_NAME, null, values1);
+        // replacing duplicate values
+         long row=db.insertWithOnConflict(FeedReaderContract.FeedEntry.TABLE_NAME, null, values1,SQLiteDatabase.CONFLICT_REPLACE);
     }
 
 
@@ -125,6 +127,8 @@ public class MainActivity extends AppCompatActivity {
         else
         {
             Toast.makeText(getBaseContext(),"record does  not exist",Toast.LENGTH_SHORT).show();
+            TextView vv=(TextView)findViewById(R.id.textView2);
+            vv.setText(null);
         }
 
 //   To retrieve one whole column data into textView
@@ -148,7 +152,6 @@ public class MainActivity extends AppCompatActivity {
 */
 
     }
-
 
 
 // save a data as record then press delete button
