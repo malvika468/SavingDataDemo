@@ -247,7 +247,7 @@ public class MainActivity extends AppCompatActivity {
             //file = new File(Environment.getExternalStoragePublicDirectory(
                     //Environment.DIRECTORY_DOCUMENTS),file1);
             File file=Environment.getExternalStorageDirectory();
-            Log.v("name",String.valueOf(file));
+            Log.v("name",String.valueOf(file));  /// printing the path in log
             try{
                 outputStream = openFileOutput(file1, Context.MODE_PRIVATE);
                 outputStream.write(str1.getBytes());
