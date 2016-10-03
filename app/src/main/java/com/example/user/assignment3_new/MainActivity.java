@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -197,6 +198,7 @@ public class MainActivity extends AppCompatActivity {
 
        Context context=getApplicationContext();
         File file = new File(context.getFilesDir(), "myfile");
+        Log.v("name",String.valueOf(file));
         EditText ed=(EditText)findViewById(R.id.editText);
         String str=ed.getText().toString();
         FileOutputStream outputStream;
@@ -245,6 +247,7 @@ public class MainActivity extends AppCompatActivity {
             //file = new File(Environment.getExternalStoragePublicDirectory(
                     //Environment.DIRECTORY_DOCUMENTS),file1);
             File file=Environment.getExternalStorageDirectory();
+            Log.v("name",String.valueOf(file));
             try{
                 outputStream = openFileOutput(file1, Context.MODE_PRIVATE);
                 outputStream.write(str1.getBytes());
@@ -269,6 +272,7 @@ public class MainActivity extends AppCompatActivity {
             file = new File(Environment.getExternalStoragePublicDirectory(
             Environment.DIRECTORY_DOCUMENTS),file1);
            // File file=Environment.getExternalStoragePublicDirectory();
+            Log.v("name",String.valueOf(file));
             try{
                 outputStream = openFileOutput(file1, Context.MODE_PRIVATE);
                 outputStream.write(str1.getBytes());
